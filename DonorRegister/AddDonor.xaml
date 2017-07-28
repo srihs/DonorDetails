@@ -1,4 +1,4 @@
-﻿<Controls:MetroWindow x:Class="DonorRegister.AddDonor"
+﻿<Controls:MetroWindow xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"  x:Class="DonorRegister.AddDonor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="Add a new donor" Height="363.492" Width="398.413">
+        Title="Add a new donor" Height="445" Width="398.413">
     <Border Padding="10">
         <StackPanel>
             <Grid>
@@ -27,16 +27,44 @@
             </Grid>
 
             <Grid>
-                <!--Start the Regrstration # and Start Date Info-->
+                <!--Start the Firstname and Initials Info-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="txtInitials" Margin="0,5,5,0" Grid.Column="0" />
-                <TextBox x:Name="txtFistName" Margin="0,5,5,0" Grid.Column="1" />
+                <xctk:WatermarkTextBox x:Name="txtInitials" Margin="0,5,5,0" Grid.Column="0" Watermark="මුල් අකුරු"/>
+                <xctk:WatermarkTextBox x:Name="txtFistName" Margin="0,5,5,0" Grid.Column="1" Watermark="නම" />
             </Grid>
-            <TextBox x:Name="txtLastName" Margin="0,5,5,0" />
-            <TextBox x:Name="txtAddressLine1" Margin="0,10,5,0" />
+            <xctk:WatermarkTextBox x:Name="txtLastName" Margin="0,5,5,0" Watermark="වාසගම" />
+            <xctk:WatermarkTextBox x:Name="txtAddressLine1" Margin="0,5,5,0" Watermark="ලිපිනය - අංකය" />
+            <xctk:WatermarkTextBox x:Name="txtAddressLine2" Margin="0,5,5,0" Watermark="ලිපිනය - මාවත" />
+            <xctk:WatermarkTextBox x:Name="txtAddressLine3" Margin="0,5,5,0" Watermark="ලිපිනය - නගරය" />
+
+            <Grid>
+                <!--Start the Mobile # and HopePage Info-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <xctk:WatermarkTextBox x:Name="txtTelephone" Margin="0,5,5,0" Grid.Column="0" Watermark="දු.ක. අංකය"/>
+                <xctk:WatermarkTextBox x:Name="txtMobile" Margin="0,5,5,0" Grid.Column="1" Watermark="ජංගම දු.ක අංකය"/>
+            </Grid>
+            <xctk:WatermarkTextBox x:Name="txtEmail" Margin="0,5,5,0" Watermark="Email" />
+            <xctk:WatermarkTextBox x:Name="txtFacebook" Margin="0,5,5,0" Watermark="Facebook" />
+            <xctk:WatermarkTextBox x:Name="txtIMo" Margin="0,5,5,0" Watermark="IMO" />
+            <xctk:WatermarkTextBox x:Name="txtComment" Margin="0,5,5,0" Watermark="Comment" Height="65" />
+
+            <Grid>
+                <!--Start the button section-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnSubmit" Content="Submit" Grid.Column="1" Margin="0,5,5,0"/>
+                <Button x:Name="btnReset"  Content="Reset" Grid.Column="2" Margin="0,5,5,0"/>
+
+            </Grid>
 
         </StackPanel>
     </Border>
