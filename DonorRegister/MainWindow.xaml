@@ -1,0 +1,46 @@
+﻿<Controls:MetroWindow x:Class="DonorRegister.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:DonorRegister"
+        mc:Ignorable="d"
+        Title="" Height="300" Width="600" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" >
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="BtnAddNewUser" Click="BtnAddNewUser_Click" Background="Transparent"
+        BorderBrush="Transparent"
+        BorderThickness="0"   Margin="145,5,0,0" Grid.Column="2" Height="35" Width="40">
+                    <StackPanel>
+                        <Image Source="images/addUser.png" Height="20" Width="20" Grid.Column="2"/>
+                    </StackPanel>
+                </Button>
+                <Button  
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"   
+                    Margin="60,5,5,0" 
+                    Grid.Column="2" 
+                    Height="35" 
+                    Width="40">
+                    <StackPanel>
+                        <Image Source="images/Donation.png" Height="20" Width="20" Grid.Column="2"/>
+                    </StackPanel>
+                </Button>
+                <TextBlock Text="Bandarawela Mahamevnawa Asapuwa" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontSize="16" FontWeight="SemiBold"></TextBlock>
+            </Grid>
+            <Separator/>
+        </StackPanel>
+
+
+    </Grid>
+</Controls:MetroWindow>

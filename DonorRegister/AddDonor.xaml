@@ -1,0 +1,41 @@
+﻿<Controls:MetroWindow x:Class="DonorRegister.AddDonor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:DonorRegister"
+        mc:Ignorable="d"
+        Title="Add a new donor" Height="363.492" Width="398.413">
+    <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <!--Start the Regrstration # and Start Date Info-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Margin="0,5,5,0" Grid.Column="0" />
+                <DatePicker Margin="0,5,5,0" Grid.Column="1">
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="Text" Value="Start Date"/>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+
+            </Grid>
+
+            <Grid>
+                <!--Start the Regrstration # and Start Date Info-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtInitials" Margin="0,5,5,0" Grid.Column="0" />
+                <TextBox x:Name="txtFistName" Margin="0,5,5,0" Grid.Column="1" />
+            </Grid>
+            <TextBox x:Name="txtLastName" Margin="0,5,5,0" />
+        </StackPanel>
+    </Border>
+</Controls:MetroWindow>
