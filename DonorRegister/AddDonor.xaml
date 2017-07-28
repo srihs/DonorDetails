@@ -36,6 +36,8 @@
                 <TextBox x:Name="txtFistName" Margin="0,5,5,0" Grid.Column="1" />
             </Grid>
             <TextBox x:Name="txtLastName" Margin="0,5,5,0" />
+            <TextBox x:Name="txtAddressLine1" Margin="0,10,5,0" />
+
         </StackPanel>
     </Border>
 </Controls:MetroWindow>
