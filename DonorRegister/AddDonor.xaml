@@ -15,7 +15,9 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Margin="0,5,5,0" Grid.Column="0" />
+
+                <xctk:WatermarkTextBox x:Name="txtMemberNo" Margin="0,5,5,0" Grid.Column="0" Watermark="සාමාජික අංකය"/>
+
                 <DatePicker Margin="0,5,5,0" Grid.Column="1">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
