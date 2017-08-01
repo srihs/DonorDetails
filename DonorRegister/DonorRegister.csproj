@@ -159,5 +159,8 @@
   <ItemGroup>
     <Content Include="ReleaseNotes.css" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

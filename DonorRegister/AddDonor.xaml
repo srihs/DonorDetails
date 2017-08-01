@@ -6,7 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="Add a new donor" Height="445" Width="398.413">
+        Title="නව සාමාජිකයින් ලියාපදිංචිය" Height="445" Width="398.413">
     <Border Padding="10">
         <StackPanel>
             <Grid>
@@ -21,7 +21,7 @@
                 <DatePicker Margin="0,5,5,0" Grid.Column="1">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
-                            <Setter Property="Text" Value="Start Date"/>
+                            <Setter Property="Text" Value="ආරම්භක දිනය"/>
                         </Style>
                     </DatePicker.Resources>
                 </DatePicker>
@@ -51,7 +51,7 @@
                 <xctk:WatermarkTextBox x:Name="txtTelephone" Margin="0,5,5,0" Grid.Column="0" Watermark="දු.ක. අංකය"/>
                 <xctk:WatermarkTextBox x:Name="txtMobile" Margin="0,5,5,0" Grid.Column="1" Watermark="ජංගම දු.ක අංකය"/>
             </Grid>
-            <xctk:WatermarkTextBox x:Name="txtEmail" Margin="0,5,5,0" Watermark="Email" />
+            <xctk:WatermarkTextBox x:Name="txtEmail" Margin="0,5,5,0" Watermark="ඊ මේල්" />
             <xctk:WatermarkTextBox x:Name="txtFacebook" Margin="0,5,5,0" Watermark="Facebook" />
             <xctk:WatermarkTextBox x:Name="txtIMo" Margin="0,5,5,0" Watermark="IMO" />
             <xctk:WatermarkTextBox x:Name="txtComment" Margin="0,5,5,0" Watermark="Comment" Height="65" />
