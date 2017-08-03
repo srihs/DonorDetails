@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Data.Entity;
 
 namespace DonorRegister.Model
 {
@@ -16,11 +16,30 @@ namespace DonorRegister.Model
         public string AddressLine3 { get; set; }
         public string Telephone { get; set; }
         public string MobileNo { get; set; }
-        public string Email { get; set; }
+        public string Email { get; set; } 
         public string Facebook { get; set; }
         public string IMO { get; set; }
         public string Comments { get; set; }
 
 
+    }
+
+    //public class Donation : BaseClass
+    //{
+    //    public Donor Donor { get; set; }
+    //    public double Amount { get; set; }
+    //    public int Month { get; set; }
+    //    public int Year { get; set; }
+    //}
+
+
+    public class DonorDbContext : DbContext
+    {
+        public DonorDbContext()
+            : base("DbConnection")
+        {
+        }
+        public DbSet<Donor> Donors { get; set; }
+        public DbSet<Donation> Donations { get; set; }
     }
 }
