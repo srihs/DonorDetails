@@ -38,5 +38,11 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void btnDonation_Click(object sender, RoutedEventArgs e)
+        {
+            Donations objDonation = new Donations();
+            objDonation.Show();
+        }
     }
 }

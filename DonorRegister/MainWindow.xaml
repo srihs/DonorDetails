@@ -24,7 +24,7 @@
                         <Image Source="images/addUser.png" Height="20" Width="20" Grid.Column="2"/>
                     </StackPanel>
                 </Button>
-                <Button  
+                <Button  x:Name="btnDonation" Click="btnDonation_Click"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     BorderThickness="0"   
