@@ -6,7 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="නව සාමාජිකයින් ලියාපදිංචිය" Height="445" Width="398.413">
+        Title="නව සාමාජිකයින් ලියාපදිංචිය" Height="445" Width="398.413" BorderThickness="1" BorderBrush="Black">
     <Border Padding="10">
         <StackPanel>
             <Grid>
@@ -18,7 +18,7 @@
 
                 <xctk:WatermarkTextBox x:Name="txtMemberNo" Margin="0,5,5,0" Grid.Column="0" Watermark="සාමාජික අංකය"/>
 
-                <DatePicker Margin="0,5,5,0" Grid.Column="1">
+                <DatePicker x:Name="dtpStartDate" Margin="0,5,5,0" Grid.Column="1">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="Text" Value="ආරම්භක දිනය"/>
@@ -63,7 +63,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnSubmit" Content="Submit" Grid.Column="1" Margin="0,5,5,0"/>
+                <Button x:Name="btnSubmit" Content="Submit" Grid.Column="1" Margin="0,5,5,0" Click="btnSubmit_Click"/>
                 <Button x:Name="btnReset"  Content="Reset" Grid.Column="2" Margin="0,5,5,0"/>
 
             </Grid>

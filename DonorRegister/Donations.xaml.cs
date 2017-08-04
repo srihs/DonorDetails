@@ -20,9 +20,26 @@ namespace DonorRegister
     /// </summary>
     public partial class Donations : MetroWindow
     {
+
+        #region
+        DonorDbContext dbContext;
+
+
+        #endregion
         public Donations()
         {
             InitializeComponent();
+            dbContext = new DonorDbContext();
+
+            try
+            {
+                List<Donor> objDonorList = dbContext.Donors.ToList<Donor>();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

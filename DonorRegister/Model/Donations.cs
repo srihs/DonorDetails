@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonorRegister.Model
+namespace DonorRegister
 {
     public class Donation : BaseClass
     {

@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace DonorRegister.Model
+namespace DonorRegister
 {
     public class Donor : BaseClass
     {
         public int Id { get; set; }
         public string MembershipNo { get; set; }
-        public DateTime StartDate { get; set; }
+        public DateTime ?StartDate { get; set; }
         public string Initials { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -20,7 +21,7 @@ namespace DonorRegister.Model
         public string Facebook { get; set; }
         public string IMO { get; set; }
         public string Comments { get; set; }
-
+        public virtual List<Donation> DonationList { get; set; }
 
     }
 

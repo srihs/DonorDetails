@@ -6,7 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="" Height="300" Width="600" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" >
+        Title="" Height="300" Width="600" BorderThickness="1" BorderBrush="Black" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" >
     <Grid>
         <StackPanel Orientation="Vertical">
             <Grid>
