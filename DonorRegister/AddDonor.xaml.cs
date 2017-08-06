@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq.Expressions;
 
 namespace DonorRegister
 {
@@ -29,17 +30,67 @@ namespace DonorRegister
         public AddDonor()
         {
             InitializeComponent();
+            LoadMemberNumber();
+            txtFistName.BorderBrush = Brushes.Red;
+            txtLastName.BorderBrush = Brushes.Red;
+            txtAddressLine1.BorderBrush = Brushes.Red;
+            dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+
+
+        }
+
+        private void LoadMemberNumber()
+        {
+            try
+            {
+                dbContext = new DonorDbContext();
+                var query = from donors in dbContext.Donors
+                            orderby donors.Id descending
+                            select donors;
+
+                var donor = query.First();
+                int nextId = donor.Id + 1;
+
+                txtMemberNo.Text = "BW00" + nextId.ToString();
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+
+                //Validate Data
+                if (txtFistName.Text == string.Empty)
+                {
+                    txtFistName.BorderBrush = Brushes.Red;
+                    return;
+
+                }
+                if (txtLastName.Text == string.Empty)
+                {
+                    txtLastName.BorderBrush = Brushes.Red;
+                    return;
+
+                }
+
+                if (txtAddressLine1.Text == string.Empty)
+                {
+                    txtAddressLine1.BorderBrush = Brushes.Red;
+                    return;
+                }
+
                 //creating the object to hold the data
                 objDonor = new Donor();
 
                 //assigning data to Donor's properties
-                objDonor.MembershipNo = txtMemberNo.Text;
                 objDonor.StartDate = dtpStartDate.SelectedDate;
                 objDonor.Initials = txtInitials.Text;
                 objDonor.Name = txtFistName.Text;
@@ -55,9 +106,17 @@ namespace DonorRegister
                 objDonor.Comments = txtComment.Text;
                 objDonor.DateCreated = System.DateTime.Now;
 
+
+
+
+
                 dbContext = new DonorDbContext();
                 dbContext.Donors.Add(objDonor);
                 dbContext.SaveChanges();
+
+
+
+                MessageBox.Show("Record saved", "Saved");
             }
             catch (Exception ex)
             {
