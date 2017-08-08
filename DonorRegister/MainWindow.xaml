@@ -36,7 +36,7 @@
                         <Image Source="images/Donation.png" Height="20" Width="20" Grid.Column="2"/>
                     </StackPanel>
                 </Button>
-                <TextBlock Text="Bandarawela Mahamevnawa Asapuwa" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontSize="16" FontWeight="SemiBold"></TextBlock>
+                <TextBlock Text="බණ්ඩරවෙල මහමෙව්නාව අසපුව" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontSize="16" FontWeight="SemiBold"></TextBlock>
             </Grid>
             <Separator/>
         </StackPanel>

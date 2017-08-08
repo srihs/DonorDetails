@@ -39,6 +39,27 @@ namespace DonorRegister
 
         }
 
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
+
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
+        }
+
+
         private void LoadMemberNumber()
         {
             try
@@ -113,10 +134,16 @@ namespace DonorRegister
                 dbContext = new DonorDbContext();
                 dbContext.Donors.Add(objDonor);
                 dbContext.SaveChanges();
-
-
-
                 MessageBox.Show("Record saved", "Saved");
+
+
+                foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+                {
+                    tb.Clear();
+                }
+                LoadMemberNumber();
+                dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+
             }
             catch (Exception ex)
             {

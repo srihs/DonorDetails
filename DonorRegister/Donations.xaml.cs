@@ -23,7 +23,8 @@ namespace DonorRegister
 
         #region
         DonorDbContext dbContext;
-
+        List<Donor> objDonorListDonation;
+        Donor objDonor;
 
         #endregion
         public Donations()
@@ -34,11 +35,53 @@ namespace DonorRegister
             try
             {
                 List<Donor> objDonorList = dbContext.Donors.ToList<Donor>();
+                objDonorListDonation = new List<Donor>();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                objDonor = new Donor();
+                objDonor = dbContext.Donors.SingleOrDefault(donor=>donor.MembershipNo==txtMemberNo.Text);
+                if (objDonor != null)
+                {
+                    Donation objDonation = new Donation();
+                    objDonation.Donor = objDonor;
+                    objDonation.Amount = Double.Parse(txtAmount.Text);
+                    objDonation.Month = dtpDonationDate.SelectedDate.Value.Month;
+                    objDonation.Year = dtpDonationDate.SelectedDate.Value.Year;
+
+
+                    objDonor.DonationList = new List<Donation>();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }
