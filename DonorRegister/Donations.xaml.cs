@@ -1,6 +1,7 @@
 ﻿using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace DonorRegister
 
         #region
         DonorDbContext dbContext;
-        List<Donor> objDonorListDonation;
+        List<Donation> objDonorListDonation;
         Donor objDonor;
 
         #endregion
@@ -35,7 +36,7 @@ namespace DonorRegister
             try
             {
                 List<Donor> objDonorList = dbContext.Donors.ToList<Donor>();
-                objDonorListDonation = new List<Donor>();
+                objDonorListDonation = new List<Donation>();
             }
             catch (Exception ex)
             {
@@ -65,14 +66,15 @@ namespace DonorRegister
                 objDonor = dbContext.Donors.SingleOrDefault(donor=>donor.MembershipNo==txtMemberNo.Text);
                 if (objDonor != null)
                 {
+
                     Donation objDonation = new Donation();
-                    objDonation.Donor = objDonor;
+                    objDonation.DonorId = objDonor.Id;
                     objDonation.Amount = Double.Parse(txtAmount.Text);
                     objDonation.Month = dtpDonationDate.SelectedDate.Value.Month;
                     objDonation.Year = dtpDonationDate.SelectedDate.Value.Year;
+                    objDonation.DateCreated = System.DateTime.Now;
 
-
-                    objDonor.DonationList = new List<Donation>();
+                    objDonorListDonation.Add(objDonation);
 
                 }
 

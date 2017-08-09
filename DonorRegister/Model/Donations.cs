@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -9,19 +11,13 @@ namespace DonorRegister
 {
     public class Donation : BaseClass
     {
+        [Key]
         public int Id { get; set; }
-        public Donor Donor { get; set; }
+        public int DonorId { get; set; }
         public double Amount { get; set; }
         public int Month { get; set; }
         public int Year { get; set; }
     }
 
-    //public class DonationDbContext : DbContext
-    //{
-    //    //public DonationDbContext()
-    //    //    : base("DbConnection")
-    //    //{
-    //    //}
-    //    public DbSet<Donation> Donations { get; set; }
-    //}
+
 }

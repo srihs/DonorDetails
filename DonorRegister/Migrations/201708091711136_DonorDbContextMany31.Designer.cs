@@ -7,18 +7,18 @@ namespace DonorRegister.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class DonorDbContextMany31 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DonorDbContextMany31));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708061657381_initial"; }
+            get { return "201708091711136_DonorDbContextMany31"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

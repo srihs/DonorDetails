@@ -10,7 +10,7 @@ namespace DonorRegister
         public int Id { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string MembershipNo { get; set; }
-        public DateTime ?StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         public string Initials { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -19,11 +19,11 @@ namespace DonorRegister
         public string AddressLine3 { get; set; }
         public string Telephone { get; set; }
         public string MobileNo { get; set; }
-        public string Email { get; set; } 
+        public string Email { get; set; }
         public string Facebook { get; set; }
         public string IMO { get; set; }
         public string Comments { get; set; }
-        public virtual List<Donation> DonationList { get; set; }
+        public virtual ICollection<Donation> DonationList { get; set; }
 
     }
 
@@ -44,5 +44,7 @@ namespace DonorRegister
         }
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Donation> Donations { get; set; }
+
+        
     }
 }
