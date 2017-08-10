@@ -115,6 +115,14 @@
     <Compile Include="Migrations\201708091711136_DonorDbContextMany31.Designer.cs">
       <DependentUpon>201708091711136_DonorDbContextMany31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708101424546_membership.cs" />
+    <Compile Include="Migrations\201708101424546_membership.Designer.cs">
+      <DependentUpon>201708101424546_membership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708101642492_mMonthtoString.cs" />
+    <Compile Include="Migrations\201708101642492_mMonthtoString.Designer.cs">
+      <DependentUpon>201708101642492_mMonthtoString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BaseClass.cs" />
     <Compile Include="Model\Donations.cs" />
@@ -137,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708091711136_DonorDbContextMany31.resx">
       <DependentUpon>201708091711136_DonorDbContextMany31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708101424546_membership.resx">
+      <DependentUpon>201708101424546_membership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708101642492_mMonthtoString.resx">
+      <DependentUpon>201708101642492_mMonthtoString.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
