@@ -24,21 +24,10 @@ namespace DonorRegister
         #region -Private Properties -
         DonorDbContext dbContext;
         Donor objDonor;
+        bool editMode;
         #endregion
 
-
-        public AddDonor()
-        {
-            InitializeComponent();
-            LoadMemberNumber();
-            txtFistName.BorderBrush = Brushes.Red;
-            txtLastName.BorderBrush = Brushes.Red;
-            txtAddressLine1.BorderBrush = Brushes.Red;
-            dtpStartDate.SelectedDate = System.DateTime.Now.Date;
-
-
-        }
-
+        #region -Private Methods-
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -59,6 +48,23 @@ namespace DonorRegister
             }
         }
 
+        private void LoadDonor(string membershipNo)
+        {
+            try
+            {
+                if (membershipNo != string.Empty)
+                {
+                    objDonor = new Donor();
+                   // objDonor = dbContext.Donors.FirstOrDefault<Donor.>
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void LoadMemberNumber()
         {
@@ -66,13 +72,14 @@ namespace DonorRegister
             {
                 dbContext = new DonorDbContext();
                 var query = from donors in dbContext.Donors
-                            orderby donors.Id descending
+                            orderby donors.MembershipNo descending
                             select donors;
 
                 var donor = query.First();
-                int nextId = donor.Id + 1;
+                string membershipNo = donor.MembershipNo.Replace("BW", "");
+                int nextId = int.Parse(membershipNo) + 1;
 
-                txtMemberNo.Text = "BW00" + nextId.ToString();
+                txtMemberNo.Text = "BW000" + nextId.ToString();
 
             }
 
@@ -82,6 +89,33 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message);
             }
         }
+
+        #endregion
+
+        public AddDonor()
+        {
+            InitializeComponent();
+            LoadMemberNumber();
+            txtFistName.BorderBrush = Brushes.Red;
+            txtLastName.BorderBrush = Brushes.Red;
+            txtAddressLine1.BorderBrush = Brushes.Red;
+            dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+            editMode = false;
+
+        }
+
+        public AddDonor(string membershipNo)
+        {
+            InitializeComponent();
+            txtFistName.BorderBrush = Brushes.Red;
+            txtLastName.BorderBrush = Brushes.Red;
+            txtAddressLine1.BorderBrush = Brushes.Red;
+            dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+            if (editMode)
+                LoadDonor(membershipNo);
+        }
+
+        
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
@@ -127,10 +161,6 @@ namespace DonorRegister
                 objDonor.Comments = txtComment.Text;
                 objDonor.DateCreated = System.DateTime.Now;
 
-
-
-
-
                 dbContext = new DonorDbContext();
                 dbContext.Donors.Add(objDonor);
                 dbContext.SaveChanges();
@@ -143,6 +173,34 @@ namespace DonorRegister
                 }
                 LoadMemberNumber();
                 dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // setting up the edit mode
+                editMode = true;
+
+                Search objSearch = new Search();
+
+                ////disbling all the controls for edit mode.
+                //foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+                //{
+                //    tb.IsReadOnly = true;
+                //}
+
+                ////enabling the edit mode and clearing the text for search.
+                //txtMemberNo.IsReadOnly = false;
+                //txtMemberNo.Clear();
+                objSearch.Show();
 
             }
             catch (Exception ex)

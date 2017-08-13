@@ -1,0 +1,49 @@
+﻿<Controls:MetroWindow x:Class="DonorRegister.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+                      
+        xmlns:local="clr-namespace:DonorRegister"
+        mc:Ignorable="d"
+        Title="Search" SizeToContent="WidthAndHeight" IsMaxRestoreButtonEnabled="False" BorderThickness="1" BorderBrush="Black">
+    <Border Padding="10" >
+        <StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <xctk:WatermarkTextBox CharacterCasing="Upper"  x:Name="txtMemberNo" Margin="0,5,5,0" Grid.Column="0" Watermark="සාමාජික අංකය" LostFocus="txtMemberNo_LostFocus"/>
+                <xctk:WatermarkTextBox x:Name="txtFistName" Margin="10,5,0,0" Grid.Column="1" Watermark="නම" />
+
+                <Button x:Name="btnSearch"  Content="Search" Grid.Column="2" Click="btnSearch_Click" Margin="10,5,5,0"/>
+            </Grid>
+            <xctk:BusyIndicator x:Name="busyIndicator"  Grid.Column="2">
+
+                <DataGrid x:Name="dgSearchResults" Margin="0,25,5,0" 
+                BorderThickness="1" CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnDgSelect" Click="btnDgSelect_Click">Select</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Member No" Binding="{Binding Path=MembershipNo}" Width="100" />
+                    <DataGridTextColumn Header="Initials" Binding="{Binding Path=Initials}" Width="90"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="150" />
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding Path=Surname}" Width="150" />
+
+                    </DataGrid.Columns>
+            </DataGrid>
+            </xctk:BusyIndicator>
+
+        </StackPanel>
+    </Border>
+</Controls:MetroWindow>

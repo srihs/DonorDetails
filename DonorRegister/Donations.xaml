@@ -26,7 +26,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <xctk:WatermarkTextBox CharacterCasing="Upper"  x:Name="txtMemberNo" Margin="0,5,5,0" Grid.Column="0" Watermark="සාමාජික අංකය"/>
+                <xctk:WatermarkTextBox CharacterCasing="Upper"  x:Name="txtMemberNo" Margin="0,5,5,0" Grid.Column="0" Watermark="සාමාජික අංකය" LostFocus="txtMemberNo_LostFocus"/>
 
                 <DatePicker x:Name="dtpDonationDate" Margin="0,5,5,0" Grid.Column="1">
                     <DatePicker.Resources>

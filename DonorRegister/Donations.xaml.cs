@@ -131,5 +131,27 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtMemberNo_LostFocus(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (txtMemberNo.Text != string.Empty)
+                {
+                    objDonor = dbContext.Donors.SingleOrDefault(donor => donor.MembershipNo == txtMemberNo.Text);
+                    if (objDonor == null)
+                        MessageBox.Show("Invalid membership number");
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
