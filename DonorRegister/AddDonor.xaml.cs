@@ -70,16 +70,20 @@ namespace DonorRegister
         {
             try
             {
+                // querying the db to determine the last ID
                 dbContext = new DonorDbContext();
                 var query = from donors in dbContext.Donors
                             orderby donors.MembershipNo descending
                             select donors;
-
+                
                 var donor = query.First();
                 string membershipNo = donor.MembershipNo.Replace("BW", "");
+
+                //adding 1 to create the next membership Number
                 int nextId = int.Parse(membershipNo) + 1;
 
-                txtMemberNo.Text = "BW000" + nextId.ToString();
+                //setting sequnce to be 5 digits
+                txtMemberNo.Text = "BW" + nextId.ToString("D5");
 
             }
 
