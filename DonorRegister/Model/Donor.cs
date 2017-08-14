@@ -8,7 +8,6 @@ namespace DonorRegister
     public class Donor : BaseClass
     {
         public int Id { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string MembershipNo { get; set; }
         public DateTime? StartDate { get; set; }
         public string Initials { get; set; }

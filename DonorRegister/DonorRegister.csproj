@@ -96,6 +96,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\201708141450470_removeComputedColumns.cs" />
+    <Compile Include="Migrations\201708141450470_removeComputedColumns.Designer.cs">
+      <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
@@ -154,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708101642492_mMonthtoString.resx">
       <DependentUpon>201708101642492_mMonthtoString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708141450470_removeComputedColumns.resx">
+      <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

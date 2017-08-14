@@ -151,6 +151,7 @@ namespace DonorRegister
 
                 //assigning data to Donor's properties
                 objDonor.StartDate = dtpStartDate.SelectedDate;
+                objDonor.MembershipNo = txtMemberNo.Text;
                 objDonor.Initials = txtInitials.Text;
                 objDonor.Name = txtFistName.Text;
                 objDonor.Surname = txtLastName.Text;
