@@ -144,8 +144,9 @@ namespace DonorRegister
             try
             {
                 objDonor = new Donor();
-                objDonor.MembershipNo=  objDonorList[dgSearchResults.SelectedIndex].MembershipNo;
-                AddDonor objAddDonor = new AddDonor(objDonor.MembershipNo);
+                objDonor=  objDonorList[dgSearchResults.SelectedIndex];
+                AddDonor objAddDonor = new AddDonor(objDonor);
+                objAddDonor.Show();
                 this.Close();
             }
             catch (Exception ex)

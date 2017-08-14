@@ -48,14 +48,28 @@ namespace DonorRegister
             }
         }
 
-        private void LoadDonor(string membershipNo)
+        private void LoadDonor(Donor objDonor)
         {
             try
             {
-                if (membershipNo != string.Empty)
+                if (objDonor != null)
                 {
-                    objDonor = new Donor();
-                   // objDonor = dbContext.Donors.FirstOrDefault<Donor.>
+                    //assigning data to Donor's properties
+                    dtpStartDate.SelectedDate = objDonor.StartDate;
+                    txtMemberNo.Text = objDonor.MembershipNo;
+                    txtInitials.Text = objDonor.Initials;
+                    txtFistName.Text = objDonor.Name;
+                    txtLastName.Text = objDonor.Surname;
+                    txtAddressLine1.Text = objDonor.AddressLine1;
+                    txtAddressLine2.Text = objDonor.AddressLine2;
+                    txtAddressLine3.Text = objDonor.AddressLine3;
+                    txtTelephone.Text = objDonor.Telephone;
+                    txtMobile.Text = objDonor.MobileNo;
+                    txtEmail.Text = objDonor.Email;
+                    txtFacebook.Text = objDonor.Facebook;
+                    txtIMo.Text = objDonor.IMO;
+                    txtComment.Text= objDonor.Comments;
+                    objDonor.LastModified = System.DateTime.Now;
                 }
             }
             catch (Exception ex)
@@ -75,7 +89,7 @@ namespace DonorRegister
                 var query = from donors in dbContext.Donors
                             orderby donors.MembershipNo descending
                             select donors;
-                
+
                 var donor = query.First();
                 string membershipNo = donor.MembershipNo.Replace("BW", "");
 
@@ -108,18 +122,19 @@ namespace DonorRegister
 
         }
 
-        public AddDonor(string membershipNo)
+        public AddDonor(Donor objDonor)
         {
+            editMode = true;
             InitializeComponent();
             txtFistName.BorderBrush = Brushes.Red;
             txtLastName.BorderBrush = Brushes.Red;
             txtAddressLine1.BorderBrush = Brushes.Red;
             dtpStartDate.SelectedDate = System.DateTime.Now.Date;
             if (editMode)
-                LoadDonor(membershipNo);
+                LoadDonor(objDonor);
         }
 
-        
+
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
@@ -195,17 +210,9 @@ namespace DonorRegister
                 editMode = true;
 
                 Search objSearch = new Search();
-
-                ////disbling all the controls for edit mode.
-                //foreach (TextBox tb in FindVisualChildren<TextBox>(this))
-                //{
-                //    tb.IsReadOnly = true;
-                //}
-
-                ////enabling the edit mode and clearing the text for search.
-                //txtMemberNo.IsReadOnly = false;
-                //txtMemberNo.Clear();
                 objSearch.Show();
+                this.Close();
+
 
             }
             catch (Exception ex)
