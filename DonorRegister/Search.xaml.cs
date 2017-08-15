@@ -145,14 +145,14 @@ namespace DonorRegister
             {
                 objDonor = new Donor();
                 objDonor=  objDonorList[dgSearchResults.SelectedIndex];
-                AddDonor objAddDonor = new AddDonor(objDonor);
+                AddDonor objAddDonor = new AddDonor(objDonor.Id);
                 objAddDonor.Show();
                 this.Close();
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
     }

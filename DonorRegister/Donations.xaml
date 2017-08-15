@@ -7,7 +7,7 @@
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="දායකත්ව ආධාර" Height="350" Width="499" BorderThickness="1" BorderBrush="Black" >
+        Title="දායකත්ව ආධාර" Height="350" Width="499" BorderThickness="1" BorderBrush="Black" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False">
 
     <Border Padding="10" >
         <StackPanel>

@@ -8,7 +8,7 @@
                       
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="Search" SizeToContent="WidthAndHeight" IsMaxRestoreButtonEnabled="False" BorderThickness="1" BorderBrush="Black">
+        Title="Search" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" BorderThickness="1" BorderBrush="Black">
     <Border Padding="10" >
         <StackPanel>
 

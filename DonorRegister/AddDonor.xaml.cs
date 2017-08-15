@@ -68,7 +68,7 @@ namespace DonorRegister
                     txtEmail.Text = objDonor.Email;
                     txtFacebook.Text = objDonor.Facebook;
                     txtIMo.Text = objDonor.IMO;
-                    txtComment.Text= objDonor.Comments;
+                    txtComment.Text = objDonor.Comments;
                     objDonor.LastModified = System.DateTime.Now;
                 }
             }
@@ -98,7 +98,7 @@ namespace DonorRegister
 
                 //setting sequnce to be 5 digits
                 txtMemberNo.Text = "BW" + nextId.ToString("D5");
-
+                dbContext = null;
             }
 
             catch (Exception ex)
@@ -122,7 +122,7 @@ namespace DonorRegister
 
         }
 
-        public AddDonor(Donor objDonor)
+        public AddDonor(int Id)
         {
             editMode = true;
             InitializeComponent();
@@ -131,7 +131,14 @@ namespace DonorRegister
             txtAddressLine1.BorderBrush = Brushes.Red;
             dtpStartDate.SelectedDate = System.DateTime.Now.Date;
             if (editMode)
+            {
+                objDonor = new Donor();
+                dbContext = new DonorDbContext();
+
+                objDonor = dbContext.Donors.Find(Id);
+
                 LoadDonor(objDonor);
+            }
         }
 
 
@@ -161,8 +168,12 @@ namespace DonorRegister
                     return;
                 }
 
-                //creating the object to hold the data
-                objDonor = new Donor();
+                if (!editMode)
+                {
+                    //creating the object to hold the data.  this is only if the edit mode is set to false
+                    objDonor = new Donor();
+                    objDonor.DateCreated = System.DateTime.Now;
+                }
 
                 //assigning data to Donor's properties
                 objDonor.StartDate = dtpStartDate.SelectedDate;
@@ -179,12 +190,23 @@ namespace DonorRegister
                 objDonor.Facebook = txtFacebook.Text;
                 objDonor.IMO = txtIMo.Text;
                 objDonor.Comments = txtComment.Text;
-                objDonor.DateCreated = System.DateTime.Now;
 
-                dbContext = new DonorDbContext();
                 dbContext.Donors.Add(objDonor);
-                dbContext.SaveChanges();
-                MessageBox.Show("Record saved", "Saved");
+                if (!editMode)
+                {
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Record saved", "Saved");
+
+
+                }
+                else
+                {
+                    dbContext.Donors.Attach(objDonor);
+                    dbContext.Entry(objDonor).State = System.Data.Entity.EntityState.Modified;
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Record updated", "Saved");
+
+                }
 
 
                 foreach (TextBox tb in FindVisualChildren<TextBox>(this))

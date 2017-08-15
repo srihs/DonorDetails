@@ -6,7 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
         mc:Ignorable="d"
-        Title="නව සාමාජිකයින් ලියාපදිංචිය" Height="445" Width="398.413" BorderThickness="1" BorderBrush="Black">
+        Title="නව සාමාජිකයින් ලියාපදිංචිය" Height="445" Width="398.413" BorderThickness="1" BorderBrush="Black" WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" >
     <Border Padding="10">
         <StackPanel>
             <Grid>
