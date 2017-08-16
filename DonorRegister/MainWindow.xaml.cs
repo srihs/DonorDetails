@@ -44,5 +44,11 @@ namespace DonorRegister
             Donations objDonation = new Donations();
             objDonation.Show();
         }
+
+        private void btnAck_Click(object sender, RoutedEventArgs e)
+        {
+            Acknowledgement objAck = new Acknowledgement();
+            objAck.Show();
+        }
     }
 }

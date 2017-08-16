@@ -19,7 +19,7 @@
 
                 <Button x:Name="BtnAddNewUser" Click="BtnAddNewUser_Click" Background="Transparent"
         BorderBrush="Transparent"
-        BorderThickness="0"   Margin="145,5,0,0" Grid.Column="2" Height="35" Width="40">
+        BorderThickness="0"   Margin="120,5,0,0" Grid.Column="2" Height="35" Width="40" ToolTip="නව සාමාජිකයින් ලියාපදිංචිය">
                     <StackPanel>
                         <Image Source="images/addUser.png" Height="20" Width="20" Grid.Column="2"/>
                     </StackPanel>
@@ -31,9 +31,22 @@
                     Margin="60,5,5,0" 
                     Grid.Column="2" 
                     Height="35" 
-                    Width="40">
+                    Width="40" ToolTip="දායකත්ව ආධාර">
                     <StackPanel>
                         <Image Source="images/Donation.png" Height="20" Width="20" Grid.Column="2"/>
+                    </StackPanel>
+                </Button>
+
+                <Button  x:Name="btnAck" Click="btnAck_Click"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"   
+                    Margin="-10,5,5,0" 
+                    Grid.Column="2" 
+                    Height="35" 
+                    Width="40" ToolTip="පුණ්‍යානු මෝදනා">
+                    <StackPanel>
+                        <Image Source="images/ack.jpg" Height="20" Width="20" Grid.Column="2"/>
                     </StackPanel>
                 </Button>
                 <TextBlock Text="බණ්ඩරවෙල මහමෙව්නාව අසපුව" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontSize="16" FontWeight="SemiBold"></TextBlock>
