@@ -99,6 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CustomCalender\DatePickerCalendar.cs" />
     <Compile Include="Migrations\201708141450470_removeComputedColumns.cs" />
     <Compile Include="Migrations\201708141450470_removeComputedColumns.Designer.cs">
       <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>

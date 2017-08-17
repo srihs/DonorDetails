@@ -1,27 +1,57 @@
-﻿<Controls:MetroWindow x:Class="DonorRegister.Acknowledgement"
+﻿<Controls:MetroWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:DonorRegister"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="DonorRegister.Acknowledgement"
         mc:Ignorable="d"
-        Title="පුණ්‍යානු මෝදනා"  WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" BorderThickness="1" BorderBrush="Black">
+        Title="පුණ්‍යානුමෝදනා"  WindowStartupLocation="CenterScreen" IsMaxRestoreButtonEnabled="False" BorderThickness="1" BorderBrush="Black" SizeToContent="Height" Width="404">
     <Border Padding="10">
         <StackPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Calendar x:Name="dtpStartDate" Margin="0,0,0,-134" Grid.Column="0" Grid.ColumnSpan="2" DisplayMode="Year" >
-                    <Calendar.Resources>
-                        <Style TargetType="DatePickerTextBox">
-                            <Setter Property="Text" Value="ආරම්භක දිනය"/>
+
+                <DatePicker local:DatePickerCalendar.IsMonthYear="True" Margin="0,5,10,0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Text" Value="දිනය"/>
                         </Style>
-                    </Calendar.Resources>
-                </Calendar>
-                <Button Grid.Column="1" Margin="0,10,285,0"></Button>
+                    </DatePicker.Resources>
+                </DatePicker>
+                <Button x:Name="btnSearch" Click="btnSearch_Click"   Content="Submit" Grid.Column="2" Margin="100,5,0,0"/>
+
+            </Grid>
+
+            <DataGrid x:Name="dgDonations"  AutoGenerateColumns="False" BorderBrush="Black" BorderThickness="1" Height="183" Margin="0,15,0,0" CanUserAddRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="cbSelect" Click="cbSelect_Click" ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Member No" Binding="{Binding Path=MembershipNo}" Width="100" />
+                    <DataGridTextColumn Header="Month" Binding="{Binding Path=Month}" Width="90"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}" Width="90"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid>
+                <!--Start the button section-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnSubmit" Click="btnSubmit_Click" Content="Submit" Grid.Column="1" Margin="0,5,5,0"/>
+                <Button x:Name="btnReset"  Content="Reset" Grid.Column="2" Margin="0,5,5,0"/>
+
             </Grid>
 
         </StackPanel>

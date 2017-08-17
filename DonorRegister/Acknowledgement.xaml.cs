@@ -18,11 +18,31 @@ namespace DonorRegister
     /// <summary>
     /// Interaction logic for Acknowledgement.xaml
     /// </summary>
-    public partial class Acknowledgement :  MetroWindow
+    public partial class Acknowledgement : MetroWindow
     {
         public Acknowledgement()
         {
             InitializeComponent();
+
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cbSelect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+       
     }
 }
+
