@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201708141450470_removeComputedColumns.Designer.cs">
       <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708190350528_adding-is-acknowleded-field.cs" />
+    <Compile Include="Migrations\201708190350528_adding-is-acknowleded-field.Designer.cs">
+      <DependentUpon>201708190350528_adding-is-acknowleded-field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
@@ -165,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708141450470_removeComputedColumns.resx">
       <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708190350528_adding-is-acknowleded-field.resx">
+      <DependentUpon>201708190350528_adding-is-acknowleded-field.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

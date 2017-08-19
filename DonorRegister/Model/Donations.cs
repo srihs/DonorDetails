@@ -18,6 +18,7 @@ namespace DonorRegister
         public string Month { get; set; }
         public int Year { get; set; }
         public string MembershipNo { get; set; }
+        public bool isAcknowleded { get; set; }
     }
 
 
