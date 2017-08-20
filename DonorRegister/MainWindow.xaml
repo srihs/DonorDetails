@@ -44,9 +44,22 @@
                     Margin="-10,5,5,0" 
                     Grid.Column="2" 
                     Height="35" 
-                    Width="40" ToolTip="පුණ්‍යානු මෝදනා">
+                    Width="40" ToolTip="පුණ්‍යානුමෝදනා">
                     <StackPanel>
                         <Image Source="images/ack.jpg" Height="20" Width="20" Grid.Column="2"/>
+                    </StackPanel>
+                </Button>
+
+                <Button  x:Name="btnReport" 
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"   
+                    Margin="-80,5,5,0" 
+                    Grid.Column="2" 
+                    Height="35" 
+                    Width="40" ToolTip="පුණ්‍යානුමෝදනා">
+                    <StackPanel>
+                        <Image Source="images/report.png" Height="20" Width="20" Grid.Column="2"/>
                     </StackPanel>
                 </Button>
                 <TextBlock Text="බණ්ඩරවෙල මහමෙව්නාව අසපුව" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontSize="16" FontWeight="SemiBold"></TextBlock>

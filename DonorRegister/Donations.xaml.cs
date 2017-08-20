@@ -33,13 +33,12 @@ namespace DonorRegister
         public Donations()
         {
             InitializeComponent();
-            dbContext = new DonorDbContext();
-            dtpDonationDate.SelectedDate = System.DateTime.Now.Date;
+            
 
             try
             {
-                //List<Donor> objDonorList = dbContext.Donors.ToList<Donor>();
-                objDonorListDonation = new List<Donation>();
+                dbContext = new DonorDbContext();
+                dtpDonationDate.SelectedDate = System.DateTime.Now.Date;
             }
             catch (Exception ex)
             {
@@ -151,6 +150,16 @@ namespace DonorRegister
 
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtMemberNo.Clear();
+            txtAmount.Clear();
+            objDonorListDonation = null;
+            dgDonations.ItemsSource = null;
+            dgDonations.Items.Refresh();
 
         }
     }

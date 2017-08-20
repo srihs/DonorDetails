@@ -64,7 +64,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="btnSubmit" Click="btnSubmit_Click" Content="Submit" Grid.Column="1" Margin="0,5,5,0"/>
-                <Button x:Name="btnReset"  Content="Reset" Grid.Column="2" Margin="0,5,5,0"/>
+                <Button x:Name="btnReset" Click="btnReset_Click"  Content="Reset" Grid.Column="2" Margin="0,5,5,0"/>
 
             </Grid>
         </StackPanel>

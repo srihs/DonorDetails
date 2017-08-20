@@ -226,6 +226,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\ack.jpg" />
+    <Resource Include="images\report.png" />
+    <Resource Include="images\search.png" />
     <Content Include="ReleaseNotes.css" />
   </ItemGroup>
   <ItemGroup>

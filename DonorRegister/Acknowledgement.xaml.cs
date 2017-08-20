@@ -84,7 +84,7 @@ namespace DonorRegister
                 //var donationList = null;
                 var donationList = dbContext.Donations.Where(x => x.isAcknowleded == isAcknowledged && x.Month == month && x.Year == year);
                 objDonorListDonation = donationList.ToList<Donation>();
-
+ 
                 if (objDonorListDonation.Count <= 0)
                     MessageBox.Show("No records Found.");
                 else
@@ -99,8 +99,13 @@ namespace DonorRegister
             }
         }
 
-
-
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            dgDonations.ItemsSource = null;
+            rbNotSent.IsChecked = false;
+            rbSent.IsChecked = false;
+            objDonorListDonation = null;
+        }
     }
 }
 

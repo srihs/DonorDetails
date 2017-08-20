@@ -78,8 +78,6 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message);
             }
         }
-
-
         private void LoadMemberNumber()
         {
             try
@@ -107,7 +105,15 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void ClearForm()
+        {
+            foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+            {
+                tb.Clear();
+            }
+            LoadMemberNumber();
+            dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+        }
         #endregion
 
         public AddDonor()
@@ -208,13 +214,9 @@ namespace DonorRegister
 
                 }
 
+                ClearForm();
 
-                foreach (TextBox tb in FindVisualChildren<TextBox>(this))
-                {
-                    tb.Clear();
-                }
-                LoadMemberNumber();
-                dtpStartDate.SelectedDate = System.DateTime.Now.Date;
+
 
             }
             catch (Exception ex)
@@ -223,6 +225,8 @@ namespace DonorRegister
                 MessageBox.Show(ex.Message);
             }
         }
+
+
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -242,6 +246,11 @@ namespace DonorRegister
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            ClearForm();
         }
     }
 }
