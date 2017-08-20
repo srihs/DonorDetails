@@ -235,7 +235,7 @@ namespace DonorRegister
                 // setting up the edit mode
                 editMode = true;
 
-                Search objSearch = new Search();
+                Search objSearch = new Search("ADD");
                 objSearch.Show();
                 this.Close();
 

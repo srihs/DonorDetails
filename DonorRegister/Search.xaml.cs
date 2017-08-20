@@ -30,6 +30,7 @@ namespace DonorRegister
         string memebershipNo = string.Empty;
         string firstName = string.Empty;
         Donor objDonor;
+        string formOperation;
         #endregion
 
 
@@ -37,6 +38,13 @@ namespace DonorRegister
         {
             InitializeComponent();
             dbContext = new DonorDbContext();
+        }
+
+        public Search(string operation)
+        {
+            InitializeComponent();
+            dbContext = new DonorDbContext();
+            formOperation = operation;
         }
 
 
@@ -145,9 +153,16 @@ namespace DonorRegister
             {
                 objDonor = new Donor();
                 objDonor=  objDonorList[dgSearchResults.SelectedIndex];
-                AddDonor objAddDonor = new AddDonor(objDonor.Id);
-                objAddDonor.Show();
-                this.Close();
+                
+                if(formOperation=="ADD")
+                {
+                    AddDonor objAddDonor = new AddDonor(objDonor.Id);
+                    objAddDonor.Show();
+                    this.Close();
+                }
+
+
+                
             }
             catch (Exception ex)
             {

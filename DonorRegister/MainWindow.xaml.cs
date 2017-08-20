@@ -50,5 +50,11 @@ namespace DonorRegister
             Acknowledgement objAck = new Acknowledgement();
             objAck.Show();
         }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Search objSearch = new Search("REP");
+            objSearch.Show();
+        }
     }
 }

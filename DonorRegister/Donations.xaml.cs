@@ -24,7 +24,7 @@ namespace DonorRegister
     public partial class Donations : MetroWindow
     {
 
-        #region
+        #region -Private Variables- 
         DonorDbContext dbContext;
         List<Donation> objDonorListDonation;
         Donor objDonor;
@@ -160,6 +160,11 @@ namespace DonorRegister
             objDonorListDonation = null;
             dgDonations.ItemsSource = null;
             dgDonations.Items.Refresh();
+
+        }
+
+        private void txtMemberNo_LostFocus_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }
