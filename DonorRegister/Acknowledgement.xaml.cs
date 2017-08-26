@@ -66,6 +66,8 @@ namespace DonorRegister
             try
             {
                 objDonorListDonation[dgDonations.SelectedIndex].isAcknowleded = true;
+
+
             }
             catch (Exception ex)
             {
@@ -120,6 +122,31 @@ namespace DonorRegister
             rbNotSent.IsChecked = false;
             rbSent.IsChecked = false;
             objDonorListDonation = null;
+        }
+
+        private void cbSelect_Checked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void cbSelect_Unchecked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                objDonorListDonation[dgDonations.SelectedIndex].isAcknowleded = false;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

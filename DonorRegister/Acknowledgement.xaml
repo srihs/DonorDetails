@@ -46,7 +46,7 @@
                     <DataGridTemplateColumn Width="75">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox x:Name="cbSelect" HorizontalAlignment="Center" Click="cbSelect_Click" IsChecked="{Binding isAcknowleded, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                                <CheckBox x:Name="cbSelect" Checked="cbSelect_Checked" Unchecked="cbSelect_Unchecked"  HorizontalAlignment="Center" Click="cbSelect_Click" IsChecked="{Binding isAcknowleded, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
