@@ -88,15 +88,20 @@ namespace DonorRegister
                             orderby donors.MembershipNo descending
                             select donors;
 
-                var donor = query.First();
-                string membershipNo = donor.MembershipNo.Replace("BW", "");
+                var donor = query.FirstOrDefault();
+                if (donor == null)
+                    txtMemberNo.Text = "BW000001";
+                else
+                {
+                    string membershipNo = donor.MembershipNo.Replace("BW", "");
 
-                //adding 1 to create the next membership Number
-                int nextId = int.Parse(membershipNo) + 1;
+                    //adding 1 to create the next membership Number
+                    int nextId = int.Parse(membershipNo) + 1;
 
-                //setting sequnce to be 5 digits
-                txtMemberNo.Text = "BW" + nextId.ToString("D5");
-                dbContext = null;
+                    //setting sequnce to be 5 digits
+                    txtMemberNo.Text = "BW" + nextId.ToString("D4");
+                    //dbContext = null;
+                }
             }
 
             catch (Exception ex)
