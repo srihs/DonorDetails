@@ -65,6 +65,7 @@ namespace DonorRegister
         {
             try
             {
+               
                 objDonorListDonation[dgDonations.SelectedIndex].isAcknowleded = true;
 
 
