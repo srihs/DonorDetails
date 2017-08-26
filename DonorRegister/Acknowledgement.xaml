@@ -39,6 +39,7 @@
                 <Button x:Name="btnSearch" Click="btnSearch_Click"   Content="Search" Grid.Column="2" Grid.Row="2" Margin="150,10,10,5"/>
 
             </Grid>
+            <xctk:BusyIndicator x:Name="busyIndicator" VerticalAlignment="Center"/>
 
             <DataGrid x:Name="dgDonations"  AutoGenerateColumns="False" BorderBrush="Black" BorderThickness="1" Height="183" Margin="0,15,0,0" CanUserAddRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" >
                 <DataGrid.Columns>

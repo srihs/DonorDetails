@@ -89,8 +89,9 @@ namespace DonorRegister
                             select donors;
 
                 var donor = query.FirstOrDefault();
+                //Set the membership No manually in the first time.
                 if (donor == null)
-                    txtMemberNo.Text = "BW000001";
+                    txtMemberNo.Text = "BW00001";
                 else
                 {
                     string membershipNo = donor.MembershipNo.Replace("BW", "");

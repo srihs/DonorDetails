@@ -1,6 +1,7 @@
 ﻿using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace DonorRegister
         DonorDbContext dbContext;
         List<Donation> objDonorListDonation;
         Donor objDonor;
+        private BackgroundWorker worker;
 
         #endregion
 
@@ -61,7 +63,15 @@ namespace DonorRegister
 
         private void cbSelect_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                objDonorListDonation[dgDonations.SelectedIndex].isAcknowleded = true;
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
@@ -80,15 +90,20 @@ namespace DonorRegister
                 if (rbNotSent.IsChecked == true)
                     isAcknowledged = false;
 
-
-                //var donationList = null;
                 var donationList = dbContext.Donations.Where(x => x.isAcknowleded == isAcknowledged && x.Month == month && x.Year == year);
                 objDonorListDonation = donationList.ToList<Donation>();
- 
-                if (objDonorListDonation.Count <= 0)
-                    MessageBox.Show("No records Found.");
-                else
-                    dgDonations.ItemsSource = objDonorListDonation;
+
+
+                if (objDonorListDonation != null)
+                {
+                    if (objDonorListDonation.Count <= 0)
+                    {
+                        MessageBox.Show("No records Found.");
+                        return;
+                    }
+                }
+
+                dgDonations.ItemsSource = objDonorListDonation;
                 dgDonations.Items.Refresh();
 
             }
