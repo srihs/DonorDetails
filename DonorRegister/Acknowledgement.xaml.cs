@@ -85,7 +85,8 @@ namespace DonorRegister
                 string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dtpDonationDate.SelectedDate.Value.Month);
                 int year = dtpDonationDate.SelectedDate.Value.Year;
                 bool isAcknowledged = false;
-
+                objDonorListDonation = null;
+                dgDonations.ItemsSource = null;
                 //checking for sent/not sent data
                 if (rbSent.IsChecked == true)
                     isAcknowledged = true;

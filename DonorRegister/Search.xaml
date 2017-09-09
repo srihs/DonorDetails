@@ -25,23 +25,23 @@
             </Grid>
             <xctk:BusyIndicator x:Name="busyIndicator"  Grid.Column="2">
 
-                <DataGrid x:Name="dgSearchResults" Margin="0,25,5,0" 
+                <DataGrid x:Name="dgSearchResults" Margin="0,25,5,0"  Height="300" 
                 BorderThickness="1" CanUserAddRows="False" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="75">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="btnDgSelect" Click="btnDgSelect_Click">Select</Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Member No" Binding="{Binding Path=MembershipNo}" Width="100" />
-                    <DataGridTextColumn Header="Initials" Binding="{Binding Path=Initials}" Width="90"/>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="150" />
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="75">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnDgSelect" Click="btnDgSelect_Click">Select</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Member No" Binding="{Binding Path=MembershipNo}" Width="100" />
+                        <DataGridTextColumn Header="Initials" Binding="{Binding Path=Initials}" Width="90"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="150" />
                         <DataGridTextColumn Header="Last Name" Binding="{Binding Path=Surname}" Width="150" />
 
                     </DataGrid.Columns>
-            </DataGrid>
+                </DataGrid>
             </xctk:BusyIndicator>
 
         </StackPanel>
