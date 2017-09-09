@@ -135,7 +135,7 @@ namespace DonorRegister
                 if (firstName != string.Empty)
                 {
                     var matches = from m in dbContext.Donors
-                                  where m.Name.Contains(firstName)
+                                  where m.Name.Contains(firstName) || m.Surname.Contains(firstName)
                                   select m;
 
                     objDonorList = matches.ToList<Donor>();
@@ -154,12 +154,11 @@ namespace DonorRegister
                 objDonor = new Donor();
                 objDonor=  objDonorList[dgSearchResults.SelectedIndex];
                 
-                if(formOperation=="ADD")
-                {
+               
                     AddDonor objAddDonor = new AddDonor(objDonor.Id);
                     objAddDonor.Show();
                     this.Close();
-                }
+              
 
 
                 

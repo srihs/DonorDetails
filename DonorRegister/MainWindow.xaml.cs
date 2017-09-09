@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF_AutoCompleteComboBox;
 
 namespace DonorRegister
 {
@@ -55,6 +56,12 @@ namespace DonorRegister
         {
             Search objSearch = new Search("REP");
             objSearch.Show();
+        }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            DonerDonationReport objDonorReport = new DonerDonationReport();
+            objDonorReport.Show();
         }
     }
 }

@@ -50,7 +50,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button  x:Name="btnReport" 
+                <Button  x:Name="btnReport" Click="btnReport_Click" 
                     Background="Transparent"
                     BorderBrush="Transparent"
                     BorderThickness="0"   

@@ -164,6 +164,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPF_AutoCompleteComboBox">
+      <HintPath>..\..\..\..\..\Downloads\wpf-autoCompletecombobox-dll\WPF_AutoCompleteComboBox_dll\WPF_AutoCompleteComboBox.dll</HintPath>
+    </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
@@ -199,6 +202,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomCalender\DatePickerCalendar.cs" />
+    <Compile Include="DonerDonationReport.xaml.cs">
+      <DependentUpon>DonerDonationReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201708141450470_removeComputedColumns.cs" />
     <Compile Include="Migrations\201708141450470_removeComputedColumns.Designer.cs">
       <DependentUpon>201708141450470_removeComputedColumns.cs</DependentUpon>
@@ -206,6 +212,10 @@
     <Compile Include="Migrations\201708190350528_adding-is-acknowleded-field.cs" />
     <Compile Include="Migrations\201708190350528_adding-is-acknowleded-field.Designer.cs">
       <DependentUpon>201708190350528_adding-is-acknowleded-field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709091640131_adding-prefix.cs" />
+    <Compile Include="Migrations\201709091640131_adding-prefix.Designer.cs">
+      <DependentUpon>201709091640131_adding-prefix.cs</DependentUpon>
     </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
@@ -272,6 +282,9 @@
     <EmbeddedResource Include="Migrations\201708190350528_adding-is-acknowleded-field.resx">
       <DependentUpon>201708190350528_adding-is-acknowleded-field.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709091640131_adding-prefix.resx">
+      <DependentUpon>201709091640131_adding-prefix.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -298,6 +311,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Donations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DonerDonationReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

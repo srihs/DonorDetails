@@ -22,6 +22,7 @@ namespace DonorRegister
         public string Facebook { get; set; }
         public string IMO { get; set; }
         public string Comments { get; set; }
+        public string Prefix { get; set; }
         public virtual ICollection<Donation> DonationList { get; set; }
 
     }
